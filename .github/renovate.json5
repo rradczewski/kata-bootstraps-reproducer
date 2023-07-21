@@ -72,6 +72,15 @@
         "docker"
       ],
       "allowedVersions": "/^[0-9]+$/"
+    },
+    {
+      "matchDepNames": [
+        "haskell"
+      ],
+      "matchManagers": [
+        "docker"
+      ],
+      "enabled": false
     }
   ],
   "customDatasources": {
