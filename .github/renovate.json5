@@ -77,7 +77,7 @@
       "matchDepNames": [
         "haskell"
       ],
-      "matchManagers": [
+      "matchDatasources": [
         "docker"
       ],
       "enabled": false
@@ -102,9 +102,9 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "haskell/\\.devcontainer.json$"
+        "\\.?devcontainer.json$"
       ],
-      "depNameTemplate": "haskell",
+      "depNameTemplate": "haskell-ghc",
       "matchStrings": [
         "\"image\" *: *\"haskell:(?<currentValue>.+?)\",?"
       ],
@@ -113,14 +113,14 @@
     },
     {
       "fileMatch": [
-        "haskell/stack\\.yaml$"
+        "stack.yaml$"
       ],
-      "depNameTemplate": "haskell",
+      "depNameTemplate": "haskell-stack",
       "matchStrings": [
-        "^resolver: (?<currentValue>.+?)$"
+        "^resolver(?<currentValue>.+?)$"
       ],
       "datasourceTemplate": "custom.haskell-stack",
-      "versioningTemplate": "semver-coerced"
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": [
