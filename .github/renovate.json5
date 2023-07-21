@@ -78,14 +78,14 @@
     "haskell-ghc": {
       "defaultRegistryUrlTemplate": "https://www.stackage.org/snapshots",
       "transformTemplates": [
-        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+))/).groups[0]\n    }]\n}",
+        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+)\\)/).groups[0]\n    }]\n}",
         "releases[lts=true].{ \"version\": $substring(ghc, 4) }"
       ]
     },
     "haskell-stack": {
       "defaultRegistryUrlTemplate": "https://www.stackage.org/snapshots",
       "transformTemplates": [
-        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+))/).groups[0]\n    }]\n}",
+        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+)\\)/).groups[0]\n    }]\n}",
         "releases[lts=true].{ \"version\": stack }"
       ]
     }
