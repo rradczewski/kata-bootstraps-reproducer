@@ -99,7 +99,7 @@
       "matchStrings": [
         "\"image\" *: *\"haskell:(?<currentValue>.+?)\",?"
       ],
-      "datasourceTemplate": "haskell-ghc",
+      "datasourceTemplate": "custom.haskell-ghc",
       "versioningTemplate": "semver"
     },
     {
@@ -108,10 +108,10 @@
       ],
       "depNameTemplate": "haskell",
       "matchStrings": [
-        "resolver: (?<currentValue>.+?)"
+        "^resolver: (?<currentValue>.+?)$"
       ],
-      "datasourceTemplate": "haskell-stack",
-      "versioningTemplate": "regex:lts-(?<major>\\d+)\\.(?<minor>\\d+)"
+      "datasourceTemplate": "custom.haskell-stack",
+      "versioningTemplate": "semver-coerced"
     },
     {
       "fileMatch": [
