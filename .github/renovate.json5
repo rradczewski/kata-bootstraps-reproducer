@@ -113,14 +113,14 @@
     },
     {
       "fileMatch": [
-        "(^|/)stack.yaml[^/]*$"
+        "(^|/|\\.)stack\\.yaml$"
       ],
       "depNameTemplate": "haskell-stack",
       "matchStrings": [
-        "resolver(?<currentValue>.+?)$"
+        "\\nresolver: (?<currentValue>lts-.+?)\\s"
       ],
       "datasourceTemplate": "custom.haskell-stack",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "regex:lts-(?<major>\\d+)\\.(?<minor>\\d+)"
     },
     {
       "fileMatch": [
