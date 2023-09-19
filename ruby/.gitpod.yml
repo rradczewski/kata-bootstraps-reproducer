@@ -1,7 +1,0 @@
-image: mcr.microsoft.com/devcontainers/ruby:3.2
-tasks:
-  - name: Init
-    init: bundle install
-vscode:
-  extensions:
-    - MS-vsliveshare.vsliveshare
